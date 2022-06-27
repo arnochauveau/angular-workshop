@@ -260,7 +260,7 @@ Make sure it is performant for possible larger datasets.
 
 ## built-in pipes
 
-use a built-in pipe to uppercase both the family name of the drivers
+use a built-in pipe to uppercase the family name of the drivers
 
 ## custom pipes
 
