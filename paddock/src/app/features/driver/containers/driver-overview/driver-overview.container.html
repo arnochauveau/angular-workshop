@@ -1,0 +1,2 @@
+<app-driver *ngFor="let driver of drivers; trackBy: trackByCode" [driver]="driver"
+  (driverClicked)="onDriverClicked($event)"></app-driver>

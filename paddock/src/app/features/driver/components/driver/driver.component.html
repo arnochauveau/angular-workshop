@@ -1,4 +1,4 @@
-<div class="driver" *ngFor="let driver of drivers; trackBy: trackByCode">
+<div class="driver" (click)="driverClicked.emit(driver?.permanentNumber)">
   <img [src]="driver?.image" alt="" class="driver__image">
   <h2 class="driver__name"> {{driver?.givenName}} {{driver?.familyName | uppercase}}</h2>
   <div class="driver__age">{{driver?.dateOfBirth | age}}</div>
