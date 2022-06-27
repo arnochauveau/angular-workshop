@@ -256,6 +256,7 @@ drivers = [
 ];
 ```
 now use the *ngFor directive to repeat our `<div class="driver">` for every driver.
+Make sure it is performant for possible larger datasets.
 
 ## built-in pipes
 
