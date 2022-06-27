@@ -4,17 +4,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { DriverModule } from './features/driver/driver.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LogInterceptor } from './interceptors/log.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [AppComponent],
+  imports: [SharedModule, AppRoutingModule, DriverModule],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LogInterceptor, multi: true },
   ],
-  imports: [
-    SharedModule,
-    AppRoutingModule,
-    DriverModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

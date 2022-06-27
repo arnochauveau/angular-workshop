@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TrackByFunction } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Driver } from '../../models/driver';
 
 @Component({
@@ -6,11 +6,7 @@ import { Driver } from '../../models/driver';
   templateUrl: './driver.component.html',
   styleUrls: ['./driver.component.scss'],
 })
-export class DriverComponent implements OnChanges {
+export class DriverComponent {
   @Input() driver: Driver | null = null;
   @Output() driverClicked = new EventEmitter<string>();
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
 }
