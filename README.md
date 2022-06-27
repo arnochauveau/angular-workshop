@@ -1,26 +1,69 @@
-# Lab 1
+# Lab 2
 
-## Requirements
+## manually making a SharedModule
 
-make sure you have installed the following: 
+in the `src/app` folder, make a `shared` folder with a file `shared.module.ts`
 
-- Node V16
-- Angular CLI `npm i @angular/cli`
+From the AppModule move the BrowserModule import to the SharedModule. Don't forget to also export it from the SharedModule.
 
-## Generating a project with Angular CLI
+In the AppModule import the SharedModule. 
 
-> /ˈpadək/ - *noun* - Paddock an enclosure adjoining a racecourse where horses or motorcars are assembled before a race
+Now everything you import and export in the SharedModule will be available in all your modules.
 
-In this folder run `ng new paddock` to generate a new angular app called 'paddock'. 
+## Generate a feature module
 
-- answer yes for routing
-- use SCSS as the stylesheet format
-- Wait as the packages install
+run `ng g module features/driver --module=app` in your CLI. 
 
-Try running the app with `npm start`
+> `g` is the shorthand for generate, you could also shorthand the module with `m`
 
-> ⚠️ make sure your terminal is in the right folder!
+The cli will generate the module for you. By adding the --module flag, you specify the importing module. 
 
-## Go exploring
+Take a look at the AppModule, the DriverModule should be imported.
 
-Take a look at the generated files while the rest is finishing up, are there any files you don't recognize? Feel free to google or ask what they are for!
+## manually creating a component
+
+remove all the code from app.component.html
+
+In the `shared` folder create a folder `components/header`
+In this folder, create 3 files: `header.component.ts`, `header.component.html` & `header.component.scss`.
+
+Add the necessary Typescript code. **Don't forget adding it to the module declarations and export!**
+
+In this header's template create a Title `Paddock` and two menu items: `drivers` & `admin`;
+
+don't forget to add your header component to the `app.component.html`
+
+```html
+<app-header></app-header>
+```
+
+## Generating a component
+
+Generate a driver component with the following command `ng g c features/driver/components/driver`
+
+**Don't forget adding it to the module export!**
+
+add the component to `app.component.html`
+
+add your favorite driver to the DriverComponent's class
+
+```ts
+driver = {
+    driverId: 'norris',
+    permanentNumber: '4',
+    code: 'NOR',
+    url: 'http://en.wikipedia.org/wiki/Lando_Norris',
+    givenName: 'Lando',
+    familyName: 'Norris',
+    dateOfBirth: '1999-11-13',
+    nationality: 'British',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Lando_Norris_Formula_1_Driver_%2849379469418%29_%28cropped%29_%28cropped%29.jpg/440px-Lando_Norris_Formula_1_Driver_%2849379469418%29_%28cropped%29_%28cropped%29.jpg'
+  };
+```
+
+in the template of the DriverComponent, add an image and bind it's `src` attribute to the `image` property of the driver object. 
+
+Add a h2 with the driver's given- and family name using interpolation
+
+## Bonus: make a function that calculates the driver's age and add the age to the template.
+## Bonus: add some styling to spice up your design.
