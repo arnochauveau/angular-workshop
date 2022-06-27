@@ -2,11 +2,11 @@
 
 ## Container
 
-generate a new Container in the folder `src/app/features/driver/containers/driver-container`
+generate a new Container in the folder `src/app/features/driver/containers/driver-overview-container`
 
 move the drivers property to this new container.
 
-Remove the `driverComponent` from the export in the `driverModule` instead add the `DriverContainer`
+Remove the `driverComponent` from the export in the `driverModule` instead add the `DriverOverviewContainer`
 
 Add the container to the AppComponent's template instead of the driverComponent.
 
