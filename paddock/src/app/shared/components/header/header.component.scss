@@ -1,0 +1,21 @@
+nav {
+  background-color: #ce2d1e;
+  display: flex;
+  color: #FFF;
+  flex-direction: row;
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.menu-items{
+  display: flex;
+}
+
+.menu-item {
+  margin-right: 16px;
+}

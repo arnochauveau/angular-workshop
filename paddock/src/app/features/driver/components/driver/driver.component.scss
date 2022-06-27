@@ -1,0 +1,23 @@
+.driver {
+  margin: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 182px;
+  padding: 32px 16px;
+  background-color: #FFF;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.driver__image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border-radius: 16px 16px 0 0;
+}
+
+.driver__name{
+  font-weight: bold;
+}
