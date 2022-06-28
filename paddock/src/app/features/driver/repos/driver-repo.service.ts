@@ -15,6 +15,11 @@ export class DriverRepoService {
       .pipe(map((drivers) => drivers.map((d) => ({ ...d, age: this.calculateAge(d.dateOfBirth) }))));
   }
 
+  getDriverByNumber(driverNumber: string) {
+    return this.httpClient
+      .get<Driver>(`http://localhost:3000/drivers?permanentNumber=${driverNumber}`)
+  }
+
   private calculateAge(dateOfBirth: string): string {
     const birthDate = new Date(dateOfBirth);
     const now = new Date();

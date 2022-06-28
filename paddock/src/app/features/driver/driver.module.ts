@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DriverComponent } from './components/driver/driver.component';
-import { DriverOverviewContainer } from './containers/driver-overview/driver-overview.container';
 
+import { DriverRoutingModule } from './driver-routing.module';
+import { DriverOverviewContainer } from './containers/driver-overview/driver-overview.container';
+import { DriverComponent } from './components/driver/driver.component';
+import { DriverDetailContainer } from './containers/driver-detail/driver-detail.container';
 
 
 @NgModule({
-  declarations: [
-    DriverComponent,
-    DriverOverviewContainer
-  ],
+  declarations: [DriverOverviewContainer, DriverComponent, DriverDetailContainer],
   imports: [
-    CommonModule
+    CommonModule,
+    DriverRoutingModule
   ],
-  exports: [
-    DriverOverviewContainer
-  ]
+  exports: [DriverOverviewContainer]
 })
 export class DriverModule { }

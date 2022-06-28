@@ -7,16 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  adminClicked = false;
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAdminClicked() {
-    window.alert('Access Denied');
-    this.adminClicked = true;
-  }
 
 }

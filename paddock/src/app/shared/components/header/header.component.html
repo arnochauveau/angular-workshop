@@ -1,7 +1,7 @@
 <nav>
   <h1>Paddock</h1>
   <div class="menu-items">
-    <a class="menu-item">Drivers</a>
-    <a class="menu-item" (click)="onAdminClicked()" *ngIf="adminClicked === false">Admin</a>
+    <a class="menu-item" routerLinkActive="menu-item--active" routerLink='/drivers'>Drivers</a>
+    <a class="menu-item" routerLinkActive="menu-item--active" routerLink='/admin'>Admin</a>
   </div>
 </nav>

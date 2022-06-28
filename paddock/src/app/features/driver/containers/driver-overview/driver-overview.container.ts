@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Driver } from '../../models/driver';
 import { DriverRepoService } from '../../repos/driver-repo.service';
 
@@ -11,10 +12,10 @@ export class DriverOverviewContainer {
 
   drivers$ = this.driverRepo.getDrivers();
 
-  constructor(private driverRepo: DriverRepoService){}
+  constructor(private driverRepo: DriverRepoService, private router: Router){}
 
   onDriverClicked(permanentNumber: string) {
-    window.alert(`driver #${permanentNumber} clicked.`);
+    this.router.navigateByUrl(`/drivers/${permanentNumber}`)
   }
 
   trackByCode(index: number, driver: Driver) {

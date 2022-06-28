@@ -20,4 +20,10 @@ h1 {
 
 .menu-item {
   margin-right: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item--active {
+  text-decoration: underline;
 }
